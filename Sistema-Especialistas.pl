@@ -11,14 +11,14 @@ paciente(pessoa1, 36, 81, 99, 180, 95, true, 79, 2). %*****GRAVE*****
 %----------------------END-DADOS----------------------
 
 %----------------------REGRAS----------------------
-temperatura_media(N):-paciente(N,T,_,_,_,_,_,_,), T < 35 ; paciente(N,T,_,_,_,_,_,_,), T >= 37, paciente(N,T,_,_,_,_,_,_,_), T =< 39.
+temperatura_media(N):-paciente(N,T,_,_,_,_,_,_,_), T < 35 ; paciente(N,T,_,_,_,_,_,_,_), T >= 37, paciente(N,T,_,_,_,_,_,_,_), T =< 39.
 temperatura_alta(N):-paciente(N,T,_,_,_,_,_,_,_), T > 39.
 frequencia_cardiaca(N):-paciente(N,_,FC,_,_,_,_,_,_), FC > 100.
 frequencia_respiratoria(N):-paciente(N,_,_,FR,_,_,_,_,_), FR > 30.
 pressao_arterial(N):-paciente(N,_,_,_,PA,_,_,_,_), PA < 100.
 saturacao_oxigenio(N):-paciente(N,_,_,_,_,SAO,_,_,_), SAO < 95.
 dispneia(N):-paciente(N,_,_,_,_,_,D,_,_), D = true.
-idade_media(N):-paciente(N,_,_,_,_,_,_,I,), I >= 60, paciente(N,_,_,_,_,_,_,I,), I =< 79.
+idade_media(N):-paciente(N,_,_,_,_,_,_,I,_), I >= 60, paciente(N,_,_,_,_,_,_,I,_), I =< 79.
 idade_alta(N):-paciente(N,_,_,_,_,_,_,I,_), I > 80.
 comorbidade(N):-paciente(N,_,_,_,_,_,_,_,C), C > 1.
 %----------------------END-REGRAS----------------------
