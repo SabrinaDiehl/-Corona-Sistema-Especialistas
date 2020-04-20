@@ -6,6 +6,8 @@ paciente(gusman, 36, 90, 16, 120, 96, false, 37, 1). %*****LEVE*****
 paciente(lucrecia, 35, 97, 10, 184, 95, false, 54, 0). %*****LEVE*****
 paciente(cayetana, 38.3, 165, 28, 102, 96, true, 16, 1).  %*****GRAVE*****
 paciente(samuel, 35, 97, 10, 184, 95, false, 36, 0). %*****LEVE*****
+%********TESTE COM DADOS REAIS********%
+paciente(pessoa1, 36, 81, 99, 180, 95, true, 79, 2). %*****GRAVE*****
 %----------------------END-DADOS----------------------
 
 %----------------------REGRAS----------------------
@@ -16,7 +18,7 @@ frequencia_respiratoria(N):-paciente(N,_,_,FR,_,_,_,_,_), FR > 30.
 pressao_arterial(N):-paciente(N,_,_,_,PA,_,_,_,_), PA < 100.
 saturacao_oxigenio(N):-paciente(N,_,_,_,_,SAO,_,_,_), SAO < 95.
 dispneia(N):-paciente(N,_,_,_,_,_,D,_,_), D = true.
-idade_media(N):-paciente(N,_,_,_,_,_,_,I,), I >= 60, paciente(N,I,_,_,_,_,_,_,), I =< 79.
+idade_media(N):-paciente(N,_,_,_,_,_,_,I,), I >= 60, paciente(N,_,_,_,_,_,_,I,), I =< 79.
 idade_alta(N):-paciente(N,_,_,_,_,_,_,I,_), I > 80.
 comorbidade(N):-paciente(N,_,_,_,_,_,_,_,C), C > 1.
 %----------------------END-REGRAS----------------------
